@@ -1,17 +1,16 @@
 import { useState } from "react"
+import {Routes, Route} from 'react-router-dom'
+import Home from './Home.jsx'
+import Rose from '../public/Rose.jsx'
 function App(props) {
-
   const [a ,setA] = useState(0)
-  console.log(a)
-  // setA(1)
-
   return (
-   <div className="a">
-      <h1> {props.a}</h1>
-      <button onClick={ ()=>{setA(a+1)} }> Update by 1</button>
-      <h1> {a}</h1>
-   </div>
+
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<Rose />} />
+    </Routes>
+
   )
 }
-
 export default App
